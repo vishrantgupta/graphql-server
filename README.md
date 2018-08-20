@@ -1,5 +1,6 @@
-# GraphQL-react
+### GraphQL-react
 GraphQL with node JS and React tutorial
+
 https://medium.com/@Kilrogg/using-graphql-api-with-node-js-and-react-forms-8b13f4b26361
-# graphql-server
-# graphql-server
+
+https://graphql.org/blog/rest-api-graphql-wrapper/
