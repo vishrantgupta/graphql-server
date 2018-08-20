@@ -1,3 +1,6 @@
+import rest from '../rest/restutils'
+import DataLoader from 'dataloader';
+
 import {
 GraphQLInt,
 GraphQLBoolean,
@@ -21,8 +24,22 @@ const MerchantType = new GraphQLObjectType({
   })
 });
 
+function fetchMerchantByURL(relativeURL) {
+  return rest.fetchResponseByURL(relativeURL).then(json => {
+    if(json) {
+      return json.merchant
+    }
+  });
+}
+
+const merchantLoader = new DataLoader(
+  urls => Promise.all(urls.map(fetchMerchantByURL))
+);
+
 const merchant = {
-  MerchantType
+  MerchantType,
+  // fetchMerchantByURL,
+  merchantLoader
 }
 
 export default merchant
