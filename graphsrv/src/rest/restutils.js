@@ -18,7 +18,7 @@ function fetchResponseByURL(relativeURL) {
         return response.json();
       }
     })
-.catch(error => { console.log('request failed'); });
+    .catch(error => { console.log('request failed'); });
 
 }
 

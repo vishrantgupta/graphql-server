@@ -23,7 +23,7 @@ const QueryType = new GraphQLObjectType({
         id: {type: new GraphQLNonNull(GraphQLID)},
       },
       // resolve: (root, args) => merchant.fetchMerchantByURL(`merchant/${args.id}/`)
-      resolve: (root, args) => merchant.merchantLoader.load(`/merchant/${args.id}/`),
+      resolve: (root, args) => merchant.merchantLoader.load(`merchant/${args.id}/`),
     },
   }),
 });
